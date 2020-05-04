@@ -7,7 +7,51 @@
     border: 1px solid rgba(1, 1, 1, 0.4);
     padding: 20px 10px;
 }
-.listContainer button {
+.listContainer input {
+    display: block;
+    width: 100%;
+    padding: 10px 0 10px 0;
+    margin-bottom: 15px;
+    text-indent: 15px;
+    font-size: 16px;
+    border: none;
+    outline: 1px solid darkcyan;
+    color: darkcyan;
+}
+.listContainer input:focus {
+    outline: 2px solid darkcyan;
+}
+.listContainer .error {
+    float: right;
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+}
+.listContainer > button {
+    border: none;
+    outline: none;
+    display: inline-block;
+    width: 100px;
+    padding: 5px 10px;
+    margin: 0px 5px 15px 0;
+    background: darkcyan;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.2s ease-in-out;
+}
+.listContainer > button:last-of-type {
+    background: darkred;
+}
+.listContainer > button:hover {
+    opacity: 1;
+}
+.listContainer .list {
+    display: block;
+    margin-bottom: 7px;
+}
+.listContainer .list button {
     margin-right: 5px;
     border: 1px solid rgba(1, 1, 1, 0.6);
     border-radius: 4px;
@@ -17,15 +61,15 @@
     font-weight: 700;
     line-height: 0px;
 }
-.listContainer button:first-of-type {
+.listContainer .list button:first-of-type {
     color: darkred;
     border-color: darkred;
 }
-.listContainer button:last-of-type {
+.listContainer .list button:last-of-type {
     color: darkblue;
     border-color: darkblue;
 }
-.listContainer span {
+.listContainer .list span {
     margin-left: 10px;
     font-weight: 700;
     font-style: italic;

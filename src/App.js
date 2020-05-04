@@ -1,18 +1,23 @@
 import React from "react"
 import "./styles.css"
 import TodoList from "./TodoList"
-const ContextApi = React.createContext()
+export const ContextApi = React.createContext()
 export default function App() {
     const defaultTodos = [
-        { task: "taks one", id: 1, status: 1 },
-        { task: "taks two", id: 2, status: 1 },
-        { task: "taks three", id: 3, status: 1 }
+        { task: "Task one", id: 1, status: 1 },
+        { task: "Task two", id: 2, status: 1 },
+        { task: "Task three", id: 3, status: 1 }
     ]
 
+    const [todos, setTodos] = React.useState(defaultTodos)
+
+    const todoCreateHandler = todo => {
+        setTodos([...todos, todo])
+    }
+
     return (
-        <ContextApi.Provider value={defaultTodos}>
-            <h2>React Basic ToDo List With Scratch</h2>
-            <hr />
+        <ContextApi.Provider value={{ todos, todoCreateHandler }}>
+            <h2>React Basic ToDo List From Scratch</h2>
             <TodoList />
         </ContextApi.Provider>
     )

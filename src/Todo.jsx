@@ -1,13 +1,19 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useContext } from "react"
+import { ContextApi } from "./App"
 
 export default function Todo(props) {
+    const contextTodo = useContext(ContextApi)
     return (
         <Fragment>
-            <div className="listContainer">
-                <button>x</button>
-                <button>-</button>
-                <span>List one</span>
-            </div>
+            {contextTodo.todos.map(todo => {
+                return (
+                    <div key={todo.id} className="list">
+                        <button>x</button>
+                        <button>-</button>
+                        <span>{todo.task}</span>
+                    </div>
+                )
+            })}
         </Fragment>
     )
 }
