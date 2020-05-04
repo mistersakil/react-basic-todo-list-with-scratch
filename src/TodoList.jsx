@@ -4,13 +4,19 @@ import { ContextApi } from "./App"
 
 export default function TodoList(props) {
     const { todoCreateHandler, todos } = useContext(ContextApi)
-    const defaultTodo = { task: "", id: 0, status: 1 }
+
+    const defaultTodo = { task: "", id: 1, status: 0 }
     const [todo, setTodo] = React.useState(defaultTodo)
     const [error, setError] = React.useState(false)
     const todoHandler = event => {
         let { name, value } = event.target
+        const todoId = todos[0].id + 1
         value = value.charAt(0).toUpperCase() + value.slice(1)
-        setTodo({ ...todo, [name]: value, id: todos[todos.length - 1].id + 1 })
+        setTodo(todo => ({
+            ...todo,
+            [name]: value,
+            id: todoId
+        }))
     }
     const todoProcessHandler = event => {
         event.keyCode === 13 && todoProcess()
