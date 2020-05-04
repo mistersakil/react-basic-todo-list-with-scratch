@@ -1,4 +1,33 @@
 .App {
-  font-family: sans-serif;
-  text-align: center;
+    font-family: sans-serif;
+    text-align: center;
+}
+.listContainer {
+    display: block;
+    border: 1px solid rgba(1, 1, 1, 0.4);
+    padding: 20px 10px;
+}
+.listContainer button {
+    margin-right: 5px;
+    border: 1px solid rgba(1, 1, 1, 0.6);
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 0px;
+}
+.listContainer button:first-of-type {
+    color: darkred;
+    border-color: darkred;
+}
+.listContainer button:last-of-type {
+    color: darkblue;
+    border-color: darkblue;
+}
+.listContainer span {
+    margin-left: 10px;
+    font-weight: 700;
+    font-style: italic;
+    color: rgba(1, 1, 1, 0.7);
 }
